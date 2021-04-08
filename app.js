@@ -1,20 +1,15 @@
 "use strict";
 (function () {
-    var mensaje = 'Hola';
-    var numero = 123;
-    var booleano = true;
-    var hoy = new Date();
-    var cualquiercosa;
-    cualquiercosa = mensaje;
-    cualquiercosa = numero;
-    cualquiercosa = booleano;
-    cualquiercosa = hoy;
-    var spiderman = {
-        nombre: 'Peter',
-        edad: 30
-    };
-    spiderman = {
-        nombre: 'Juan',
-        edad: 40
-    };
+    function getEdad() {
+        return 100 + 100 + 300;
+    }
+    var nombre = 'Fernando';
+    var apellido = 'Herrera';
+    var edad = 33;
+    //const salida = nombre + apellido + edad;
+    //const salida = nombre + "" + apellido + " ( " + edad + " )";
+    //const salida = `${nombre} \n${apellido} \n( ${edad} )`;
+    var salida = "\n    " + nombre + " \n    " + apellido + " \n    ( " + getEdad() + " )";
+    // Fernando Herrera (Edad: 33)
+    console.log(salida);
 })();
