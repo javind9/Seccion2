@@ -1,15 +1,51 @@
 "use strict";
 (function () {
-    function activar(quien, momento, //? puede ser opcional
-    objeto) {
-        if (objeto === void 0) { objeto = 'batiseñal'; }
-        if (momento) {
-            console.log(quien + " activ\u00F3 la " + objeto + " en la " + momento + ".");
-        }
-        else {
-            console.log(quien + " activ\u00F3 la " + objeto + ".");
-        }
-        // console.log(`${ quien } activó la ${ objeto }`);
+    //funcion asignada a una variable
+    var miFuncion = function (a) {
+        return a.toUpperCase();
+    };
+    /*
+    //misma funcion pero de flecha
+    const miFuncion = ( a:string) => {
+        return a.toUpperCase;
     }
-    activar('Gordon', 'tarde');
+    */
+    //Funcion de flecha sin llaves
+    var miFuncionF = function (a) { return a.toUpperCase(); };
+    var sumarN = function (a, b) {
+        return a + b;
+    };
+    var sumarF = function (a, b) { return a + b; };
+    //smash método
+    //Si pasamos todo esto a funcion de flecha deja de dar error
+    /*
+    const hulk = {
+        nombre: 'Hulk',
+        smash(){
+
+            setTimeout( function() {
+                console.log(`${ this.nombre } smash!!!`)
+            }, 1000);
+            
+        }
+    }
+    */
+    var hulk = {
+        nombre: 'Hulk',
+        smash: function () {
+            var _this = this;
+            setTimeout(function () {
+                console.log(_this.nombre + " smash!!!");
+            }, 1000);
+        }
+    };
+    hulk.smash();
+    /*
+
+    //Funcion tradicional
+    function funcion2(a: string){
+        return a;
+    }
+
+    */
 })();
