@@ -10,6 +10,7 @@
             } else {
                 dineroActual -= montoRetirar; //dineroActual = dineroActual - montoRetirar
                 resolve(dineroActual);
+                console.log(dineroActual);
             }
         });
     }    

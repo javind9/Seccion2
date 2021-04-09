@@ -1,23 +1,29 @@
 (() =>{
+
     
-    const retirarDinero = (montoRetirar: number): Promise<number> => {
-        
-        let dineroActual = 1000;
+    interface Xmen {
+        nombre: string;
+        edad: number;
+        poder?: string;
+    }
+    
+    const enviarMision = ( xmen: Xmen) => {
+        console.log(`Enviando a ${ xmen.nombre} a la misión`);
+    }
 
-        return new Promise(  (resolve, reject) => {
-            if ( montoRetirar > dineroActual){
-                reject('No hay suficientes fondos')
-            } else {
-                dineroActual -= montoRetirar; //dineroActual = dineroActual - montoRetirar
-                resolve(dineroActual);
-            }
-        });
-    }    
+    const regresarAlCuartel = ( xmen: Xmen) => {
+        console.log(`Enviando a ${ xmen.nombre} a la misión`);
+    }
 
+    const wolverine: Xmen = {
+        nombre: 'Logan',
+        edad: 60
+    }
 
-    retirarDinero(500)
-        .then(dineroActual => console.log(`Me queda ${ dineroActual }`))
-        .catch( console.warn)//( err => console.warn(err));
+    enviarMision( wolverine );
+    regresarAlCuartel( wolverine );
+
+    
     
 })();
 
